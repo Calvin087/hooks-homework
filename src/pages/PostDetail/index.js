@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./index.module.css";
 import ThemeButton from "../../componentsGlobal/ThemeButton/ThemeButton";
+import { themeContext } from "../../context/ThemeProvider";
 
 const renderPost = (post) => {
   return (
@@ -34,6 +35,7 @@ const renderComments = (comments) => {
 const PostDetail = () => {
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState(null);
+  const { theme } = useContext(themeContext);
 
   const { id } = useParams();
 
@@ -57,12 +59,12 @@ const PostDetail = () => {
   }, [id]);
 
   return (
-    <>
+    <div className={styles.container} data-theme={theme}>
       <ThemeButton />
       {post && renderPost(post)}
 
       {comments && renderComments(comments)}
-    </>
+    </div>
   );
 };
 
