@@ -19,7 +19,7 @@ const LatestPosts = ({ allPosts }) => {
 
   return (
     <div className={styles.container}>
-      {posts && posts.map((post) => renderPosts(post))}
+      {posts && posts.map((post, i) => <div key={i}>{renderPosts(post)}</div>)}
     </div>
   );
 };

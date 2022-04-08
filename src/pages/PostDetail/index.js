@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./index.module.css";
+import ThemeButton from "../../componentsGlobal/ThemeButton/ThemeButton";
 
 const renderPost = (post) => {
   return (
@@ -36,7 +37,6 @@ const PostDetail = () => {
 
   const { id } = useParams();
 
-  console.log(comments);
   useEffect(() => {
     const getPost = async () => {
       const { data } = await axios.get(
@@ -58,6 +58,7 @@ const PostDetail = () => {
 
   return (
     <>
+      <ThemeButton />
       {post && renderPost(post)}
 
       {comments && renderComments(comments)}
