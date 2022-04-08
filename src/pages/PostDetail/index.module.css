@@ -1,0 +1,30 @@
+.post_container {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50ch;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.comment_box {
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  width: 40ch;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  /* margin: 20px; */
+}
+
+.comment_box h4,
+pre {
+  margin: 0px;
+}
+
+.comment_box p {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
